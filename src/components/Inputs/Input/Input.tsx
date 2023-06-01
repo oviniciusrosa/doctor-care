@@ -1,9 +1,14 @@
-import { View, TextInput, TouchableOpacity } from "react-native";
+import {
+  View,
+  TextInput,
+  TouchableOpacity,
+  TextInputProps,
+} from "react-native";
 import { styles } from "./styles";
 import { Screen } from "../../../constants/screen";
 import { Feather } from "@expo/vector-icons";
 
-interface Props {
+interface Props extends TextInputProps {
   size?: number;
   prefixIcon?: keyof typeof Feather.glyphMap;
   suffixIcon?: keyof typeof Feather.glyphMap;
@@ -12,7 +17,13 @@ interface Props {
 
 const _styles = styles();
 
-export function Input({ size, prefixIcon, suffixIcon, onPressSuffix }: Props) {
+export function Input({
+  size,
+  prefixIcon,
+  suffixIcon,
+  onPressSuffix,
+  ...rest
+}: Props) {
   const isSuffixPressable: boolean = onPressSuffix != null;
   const suffixActiveOpacity: number = isSuffixPressable ? 0.6 : 1;
 
@@ -20,7 +31,7 @@ export function Input({ size, prefixIcon, suffixIcon, onPressSuffix }: Props) {
     <View style={styles(size ?? Screen.width * 0.8).container}>
       {!!prefixIcon && <Feather name={prefixIcon} size={22} color="#BBB" />}
 
-      <TextInput style={_styles.input} />
+      <TextInput style={_styles.input} {...rest} />
 
       {!!suffixIcon && (
         <TouchableOpacity
