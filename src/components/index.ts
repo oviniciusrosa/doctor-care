@@ -1,3 +1,3 @@
-import { Input } from "./Input";
+import { Input, Password } from "./Inputs";
 
-export { Input };
+export { Input, Password };
