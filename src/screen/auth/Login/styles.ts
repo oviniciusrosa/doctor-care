@@ -8,19 +8,25 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   title: {
     color: "#3D3D3D",
     fontSize: 22,
     fontWeight: "bold",
+    marginBottom: 20,
   },
-  input: {
-    backgroundColor: "#F6F6F6",
-    width: Screen.width * 0.8,
-    maxWidth: 400,
-    height: 45,
-    marginTop: 20,
-    marginBottom: 10,
-    paddingHorizontal: 15,
-    borderRadius: 8,
+
+  form: {
+    gap: 10,
+  },
+
+  signUpBtn: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    maxHeight: 40,
+  },
+  signUpText: {
+    color: "#AAA",
   },
 });
