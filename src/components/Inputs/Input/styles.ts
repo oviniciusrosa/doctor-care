@@ -10,8 +10,6 @@ export const styles = (width?: number) =>
       width: width,
       maxWidth: 400,
       height: 45,
-      marginTop: 20,
-      marginBottom: 10,
       paddingHorizontal: 10,
       borderRadius: 8,
     },
