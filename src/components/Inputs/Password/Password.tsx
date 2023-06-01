@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Input } from "..";
+import { Input } from "../Input";
 
 export function Password() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -13,6 +13,7 @@ export function Password() {
       prefixIcon="lock"
       suffixIcon={showPassword ? "eye-off" : "eye"}
       onPressSuffix={changePasswordVisibility}
+      secureTextEntry={!showPassword}
     />
   );
 }
